@@ -159,8 +159,44 @@ footer {
     background-color: #006b99;
     color: white;
     text-align: center;
-    padding: 20px;
+    padding: 1px;
     font-size: 14px;
+}
+
+.homeIntro {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.homeIntro h1 {
+  margin: 0;
+}
+
+
+.homeFeatures{
+    height: 300px;
+    display: flex;  
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: flex-end;
+    text-align: center;
+}
+
+.feature-image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.feature-image:hover {
+  transform: scale(1.05);
 }
 
 @media (max-width: 768px) {
@@ -177,3 +213,4 @@ footer {
         max-width: 300px;
     }
 }
+

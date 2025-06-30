@@ -1,11 +1,16 @@
 function getStarted() {
     alert("Redirecting to Modules page...");
-    window.location.href = "modules.html"; 
+    window.location.href = "Modules.html"; 
 }
 
 function learnMore() {
     alert("Learn more about how to build your own PC.");
-    window.location.href = "about.html"; 
+    window.location.href = "About.html"; 
+}
+
+function contacts() {
+    alert("Loading contact informations.");
+    window.location.href = "Contact.html"; 
 }
 
 document.querySelectorAll('nav ul li a').forEach(link => {

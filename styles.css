@@ -7,7 +7,6 @@ body {
     flex-direction: column;
     margin: 0;
     font-family: Verdana, sans-serif;
-    background-color: #f2f8fc;
     color: #333;
 }
 
@@ -197,6 +196,44 @@ footer {
 
 .feature-image:hover {
   transform: scale(1.05);
+}
+
+.modules  {
+    padding: 40px;
+    background-color: #eaf6ff;
+}
+
+.AboutUs {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.AboutUs2 {
+    margin: 4px;
+}
+
+.Mission {
+   padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    background-color: #eaf6ff;
+    margin: 20px 0px;
+}
+
+.buttons2 {
+  padding: 10px;
+    margin: 20px 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.socials {
+    padding: 40px;
+    background-color: #eaf6ff;
+    margin: 20px 0px;
 }
 
 @media (max-width: 768px) {

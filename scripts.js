@@ -4,7 +4,7 @@ function getStarted() {
 }
 
 function learnMore() {
-    alert("Learn more about how to build your own PC.");
+    alert("Learn more about us");
     window.location.href = "About.html"; 
 }
 

@@ -19,14 +19,11 @@ header {
     flex-wrap: wrap;
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-    padding: 20px 0;
-    font-size: 28px;
-    color: white;
-    font-weight: bold;
+.logo-img {
+  height: 80px;
+  width: auto;
 }
+
 
 nav ul {
     display: flex;
@@ -39,6 +36,7 @@ nav ul {
 
 nav ul li a {
     text-decoration: none;
+    font-size: 24px;
     color: white;
     padding: 15px 10px;
     display: block;
@@ -136,6 +134,7 @@ button:hover {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     flex: 1 1 250px;
     max-width: 300px;
+    margin: 5px;
 }
 
 .feature-item h3 {
@@ -177,7 +176,7 @@ footer {
 
 
 .homeFeatures{
-    height: 300px;
+    height: 400px;
     display: flex;  
     justify-content: space-around;
     flex-direction: row;
@@ -186,8 +185,8 @@ footer {
 }
 
 .feature-image {
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
   object-fit: cover;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -198,9 +197,31 @@ footer {
   transform: scale(1.05);
 }
 
-.modules  {
-    padding: 40px;
-    background-color: #eaf6ff;
+.modules {
+  padding: 40px;
+  background-color: #eaf6ff;
+  display: flex;
+  flex-direction: column;
+  align-items:flex-start;
+}
+
+
+.quizflex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  width: 500px;
+}
+
+.quizflex .feature-item {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 350px;
+  text-align: center;
 }
 
 .AboutUs {

@@ -236,12 +236,34 @@ footer {
 }
 
 .Mission {
-   padding: 20px;
-    display: flex;
-    justify-content: space-around;
-    text-align: center;
-    background-color: #eaf6ff;
-    margin: 20px 0px;
+  padding: 30px 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #eaf6ff;
+  margin: 30px 0;
+  border-radius: 12px;
+  gap: 30px;
+  text-align: center;
+}
+
+.Mission .aboutleft,
+.Mission .aboutright {
+  text-align: center;
+  width: 100%;
+}
+
+.Mission h2 {
+  color: #008fc9;
+  font-size: 1.5rem;
+  margin-top: 0;
+  font-family: Verdana, sans-serif;
+}
+
+.Mission p {
+  font-size: 1rem;
+  color: #333;
+  font-family: Verdana, sans-serif;
 }
 
 .buttons2 {
@@ -252,23 +274,357 @@ footer {
 }
 
 .socials {
-    padding: 40px;
-    background-color: #eaf6ff;
-    margin: 20px 0px;
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin: 32px 0;
+}
+.socials img {
+  width: 48px;
+  height: 48px;
+  transition: transform 0.2s;
+}
+.socials img:hover {
+  transform: scale(1.12);
 }
 
-@media (max-width: 768px) {
-    .intro {
-        flex-direction: column;
-        text-align: center;
-    }
+.about-hero {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.about-hero h1 {
+  font-size: 2.2rem;
+  color: #008fc9;
+  margin-bottom: 12px;
+  font-family: Verdana, sans-serif;
+}
+.about-intro p {
+  font-size: 1.1rem;
+  color: #444;
+  max-width: 600px;
+  margin: 0 auto;
+  font-family: Verdana, sans-serif;
+}
 
-    .landleft {
-        max-width: 100%;
-    }
+@media (max-width: 900px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 10px;
+  }
+  .logo-img {
+    height: 60px;
+  }
+  nav ul {
+    gap: 10px;
+  }
+  .landingphoto,
+  .feature-image {
+    max-width: 90vw;
+    height: auto;
+  }
+  .feature-list {
+    flex-direction: column;
+    align-items: center;
+  }
+  .homeFeatures {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+  .modules {
+    padding: 20px;
+  }
+  .Mission {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+  .aboutleft, .aboutright {
+    max-width: 100%;
+    width: 100%;
+  }
+}
 
-    .landingphoto {
-        max-width: 300px;
-    }
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+  }
+  nav ul li a {
+    font-size: 18px;
+    padding: 12px 0;
+    text-align: left;
+  }
+  .intro,
+  .Mission {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+  .landleft,
+  .aboutleft,
+  .aboutright {
+    max-width: 100%;
+    width: 100%;
+  }
+  .landingphoto,
+  .feature-image {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+  }
+  .feature-item {
+    max-width: 95vw;
+    margin: 10px 0;
+  }
+  .quizflex {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+  .buttons,
+  .buttons2 {
+    flex-direction: column;
+    align-items: stretch;
+    margin: 10px 0;
+  }
+}
+@media (max-width: 900px) {
+  .intro {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    gap: 20px;
+  }
+  .landleft, .landright {
+    max-width: 100%;
+    width: 100%;
+    text-align: center;
+  }
+  .landingphoto {
+    max-width: 90vw;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+@media (max-width: 600px) {
+  .intro {
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    gap: 10px;
+  }
+  .landleft, .landright {
+    max-width: 100%;
+    width: 100%;
+    text-align: center;
+  }
+  .landingphoto {
+    max-width: 100vw;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+}
+@media (max-width: 400px) {
+  nav ul {
+    overflow-x: auto;
+    white-space: nowrap;
+    flex-wrap: nowrap;
+  }
+  nav ul li {
+    display: inline-block;
+  }
+}
+
+.auth-forms {
+  display: flex;
+  gap: 30px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.login-form, .register-form {
+  background: #f7faff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  min-width: 220px;
+  max-width: 300px;
+}
+.login-form h2, .register-form h2 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 22px;
+  color: #008fc9;
+}
+.login-form input, .register-form input {
+  margin-bottom: 12px;
+  padding: 10px;
+  border: 1px solid #cce6f7;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.login-form button, .register-form button {
+  background: #008fc9;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.login-form button:hover, .register-form button:hover {
+  background: #006b99;
+}
+.profile-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+}
+.profile-card {
+  background: #f7faff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 300px;
+  max-width: 350px;
+}
+.profile-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 18px;
+  background: #eaf6ff;
+}
+.profile-card h2 {
+  margin: 0 0 10px 0;
+  color: #008fc9;
+  font-size: 1.6rem;
+  font-family: Verdana, sans-serif;
+}
+.user-status {
+  font-size: 1.1rem;
+  margin-bottom: 18px;
+  padding: 6px 18px;
+  border-radius: 20px;
+  font-weight: bold;
+  display: inline-block;
+}
+.user-status.free {
+  background: #ffe6e6;
+  color: #c90000;
+}
+.user-status.premium {
+  background: #e6ffe6;
+  color: #009933;
+}
+#become-premium-btn {
+  background: #ffd700;
+  color: #333;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 24px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+#become-premium-btn:hover {
+  background: #ffc300;
+}
+#payment-modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.4);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+#payment-modal.active {
+  display: flex;
+}
+.payment-modal-content {
+  background: #fff;
+  padding: 32px 24px;
+  border-radius: 12px;
+  min-width: 300px;
+  max-width: 90vw;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+  position: relative;
+}
+.payment-modal-content h3 {
+  margin-top: 0;
+  color: #008fc9;
+  text-align: center;
+}
+.payment-form-group {
+  margin-bottom: 14px;
+}
+.payment-form-group label {
+  display: block;
+  margin-bottom: 4px;
+}
+.payment-form-group input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+.payment-form-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.payment-form-row > div {
+  flex: 1;
+}
+.payment-form-row label {
+  display: block;
+  margin-bottom: 4px;
+}
+.payment-form-row input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+.payment-form-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+.cancel-btn {
+  background: #ccc;
+  color: #222;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.pay-btn {
+  background: #008fc9;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.pay-btn:hover {
+  background: #006b99;
 }
 

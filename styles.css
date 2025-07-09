@@ -217,6 +217,21 @@ footer {
   color:#333;
 }
 
+.module-btn{
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 18px;
+  background-color: #007bff;
+  color: #e6ffe6;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+.module-btn:hover{
+  background-color: #0056b3;
+}
+
 .quizflex {
   display: flex;
   flex-wrap: wrap;

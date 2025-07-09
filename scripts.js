@@ -1,3 +1,184 @@
+document.addEventListener('DOMContentLoaded', () => {
+
+    const quizForm1 = document.getElementById('quizForm1');
+    const questions1 = [
+        { name: 'q1_answer', correctAnswer: 'B' },
+        { name: 'q2_answer', correctAnswer: 'D' },
+        { name: 'q3_answer', correctAnswer: 'A' },
+        { name: 'q4_answer', correctAnswer: 'C' },
+        { name: 'q5_answer', correctAnswer: 'B' },
+        { name: 'q6_answer', correctAnswer: 'C' },
+        { name: 'q7_answer', correctAnswer: 'B' },
+        { name: 'q8_answer', correctAnswer: 'D' },
+        { name: 'q9_answer', correctAnswer: 'D' },
+        { name: 'q10_answer', correctAnswer: 'B' }
+    ];
+
+    if (quizForm1) {
+        quizForm1.addEventListener('submit', (event) => {
+            event.preventDefault(); // Prevent default form submission initially
+
+            // Add confirmation dialog
+            if (confirm("Are you sure you want to submit the quiz? You cannot change your answers after submission.")) {
+                let score = 0;
+                const results = [];
+                const totalQuestions = questions1.length;
+
+                questions1.forEach((q, index) => {
+                    const selectedOptionValue = quizForm1.elements[q.name]?.value;
+                    const questionNumber = index + 1;
+
+                    if (selectedOptionValue) {
+                        if (selectedOptionValue === q.correctAnswer) {
+                            score++;
+                            results.push(`<li class="correct">Question ${questionNumber}: Correct!</li>`);
+                        } else {
+                            results.push(`<li class="incorrect">Question ${questionNumber}: Incorrect. Your answer: "${selectedOptionValue}", Correct answer: "${q.correctAnswer}"</li>`);
+                        }
+                    } else {
+                        results.push(`<li class="no-answer">Question ${questionNumber}: No answer selected.</li>`);
+                    }
+                });
+
+                displayResults(score, totalQuestions, results, 'quizResults1');
+            }
+        });
+    }
+
+    const quizForm2 = document.getElementById('quizForm2');
+    const questions2 = [
+        { name: 'q1_2_answer', correctAnswer: 'B' },
+        { name: 'q2_2_answer', correctAnswer: 'D' },
+        { name: 'q3_2_answer', correctAnswer: 'A' },
+        { name: 'q4_2_answer', correctAnswer: 'C' },
+        { name: 'q5_2_answer', correctAnswer: 'B' },
+        { name: 'q6_2_answer', correctAnswer: 'C' },
+        { name: 'q7_2_answer', correctAnswer: 'B' },
+        { name: 'q8_2_answer', correctAnswer: 'D' },
+        { name: 'q9_2_answer', correctAnswer: 'A' },
+        { name: 'q10_2_answer', correctAnswer: 'B' }
+    ];
+
+    if (quizForm2) {
+        quizForm2.addEventListener('submit', (event) => {
+            event.preventDefault(); // Prevent default form submission initially
+
+            // Add confirmation dialog
+            if (confirm("Are you sure you want to submit the quiz? You cannot change your answers after submission.")) {
+                let score = 0;
+                const results = [];
+                const totalQuestions = questions2.length;
+
+                questions2.forEach((q, index) => {
+                    const selectedOptionValue = quizForm2.elements[q.name]?.value;
+                    const questionNumber = index + 1;
+
+                    if (selectedOptionValue) {
+                        if (selectedOptionValue === q.correctAnswer) {
+                            score++;
+                            results.push(`<li class="correct">Question ${questionNumber}: Correct!</li>`);
+                        } else {
+                            results.push(`<li class="incorrect">Question ${questionNumber}: Incorrect. Your answer: "${selectedOptionValue}", Correct: "${q.correctAnswer}"</li>`);
+                        }
+                    } else {
+                        results.push(`<li class="no-answer">Question ${questionNumber}: No answer selected.</li>`);
+                    }
+                });
+
+                displayResults(score, totalQuestions, results, 'quizResults2');
+            }
+        });
+    }
+
+    const quizForm3 = document.getElementById('quizForm3');
+    const questions3 = [
+        { name: 'q3_1_answer', correctAnswer: ['POWER SUPPLY UNIT', 'PSU'] },
+        { name: 'q3_2_answer', correctAnswer: ['GPU'] },
+        { name: 'q3_3_answer', correctAnswer: ['PC CASE'] },
+        { name: 'q3_4_answer', correctAnswer: ['COOLING FANS', 'HEATSINKS'] },
+        { name: 'q3_5_answer', correctAnswer: ['MOTHERBOARD'] },
+        { name: 'q3_6_answer', correctAnswer: ['CENTRAL PROCESSING UNIT', 'PROCESSOR', 'CPU'] },
+        { name: 'q3_7_answer', correctAnswer: ['RAM','MEMORY'] },
+        { name: 'q3_8_answer', correctAnswer: ['STORAGE DRIVE'] },
+    ];
+
+    if (quizForm3) {
+        quizForm3.addEventListener('submit', (event) => {
+            event.preventDefault(); // Prevent default form submission initially
+
+            // Add confirmation dialog
+            if (confirm("Are you sure you want to submit the quiz? You cannot change your answers after submission.")) {
+                let score3 = 0;
+                let totalQuestions3 = questions3.length;
+                const results3 = [];
+
+                questions3.forEach((question, index) => {
+                    const inputElement = quizForm3.elements[question.name];
+                    const questionNumber = index + 1;
+                    
+                    if (inputElement) {
+                        const userAnswer = inputElement.value.trim(); 
+                        const formattedUserAnswer = userAnswer.toLowerCase(); 
+                        let formattedCorrectAnswers = [];
+                        if (Array.isArray(question.correctAnswer)) {
+                            formattedCorrectAnswers = question.correctAnswer.map(ans => String(ans).toLowerCase());
+                        } else {
+                            formattedCorrectAnswers = [String(question.correctAnswer).toLowerCase()];
+                        }
+
+                        if (formattedCorrectAnswers.some(correct => formattedUserAnswer.includes(correct) || correct.includes(formattedUserAnswer)) ) {
+                            score3++;
+                            results3.push(`<li class="correct">Question ${questionNumber}: Correct!</li>`);
+                        } else {
+                            results3.push(`<li class="incorrect">Question ${questionNumber}: Incorrect. Your answer: "${userAnswer}", Correct answer(s): "${Array.isArray(question.correctAnswer) ? question.correctAnswer.join(' or ') : question.correctAnswer}"</li>`);
+                        }
+                    } else {
+                        results3.push(`<li class="no-answer">Question ${questionNumber}: No answer provided.</li>`);
+                    }
+                });
+                displayResults(score3, totalQuestions3, results3, 'quizResults3');
+            }
+        });
+    }
+
+    function displayResults(score, totalQuestions, results, resultsContainerId) {
+        let resultContainer = document.getElementById(resultsContainerId);
+        if (!resultContainer) {
+            console.error(`Results container with ID '${resultsContainerId}' not found. Attempting to create.`);
+            const quizForm = document.getElementById(resultsContainerId.replace('quizResults', 'quizForm'));
+            if (quizForm) {
+                resultContainer = document.createElement('div');
+                resultContainer.id = resultsContainerId;
+                quizForm.parentNode.insertBefore(resultContainer, quizForm.nextSibling);
+            } else {
+                console.error(`Could not find a place to insert results for '${resultsContainerId}'`);
+                return;
+            }
+        }
+        resultContainer.classList.add('quiz-results');
+
+        resultContainer.innerHTML = `
+            <h2>Quiz Results</h2>
+            <p>You scored ${score} out of ${totalQuestions}!</p>
+            <ul>
+                ${results.join('')} 
+            </ul>
+            <button id="retakeQuiz_${resultsContainerId}" class="retake-button">Retake Quiz</button>
+        `;
+
+        document.getElementById(`retakeQuiz_${resultsContainerId}`).addEventListener('click', () => {
+            const currentQuizFormId = resultsContainerId.replace('quizResults', 'quizForm'); 
+            const currentQuizForm = document.getElementById(currentQuizFormId);
+
+            if (currentQuizForm) {
+                currentQuizForm.reset();
+            }
+            resultContainer.innerHTML = '';
+            if (currentQuizForm) {
+                currentQuizForm.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    }
 function getStarted() {
     alert("Redirecting to Modules page...");
     window.location.href = "Modules.html"; 
@@ -107,4 +288,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+});
+
 });

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cartoony PC Builder</title>
+  <link rel="stylesheet" href="pcbuilder.css">
+</head>
+<body>
+
+  <a href="exercise.html" class="back-button">Back to Exercise</a>
+  <h1>Build the Computer</h1>
+
+  <div class="pc-area">
+    <div class="motherboard-container">
+      <img src="mb.jpg" class="motherboard-img" alt="Motherboard">
+
+      <div class="slot" id="cpu-slot"></div>
+      <div class="slot2" id="gpu-slot"></div>
+      <div class="slot3" id="ram-slot"></div>
+      <div class="slot" id="cooler-slot"></div>
+    </div>
+
+    <div class="parts-panel">
+      <div class="part" draggable="true" id="cpu">
+        <img src="cpu.png" alt="CPU">
+        <span>CPU</span>
+      </div>
+      <div class="part" draggable="true" id="gpu">
+        <img src="gpu.png" alt="GPU">
+        <span>GPU</span>
+      </div>
+      <div class="part" draggable="true" id="ram">
+        <img src="ram.png" alt="RAM">
+        <span>RAM</span>
+      </div>
+      <div class="part" draggable="true" id="cooler">
+        <img src="fan.png" alt="Cooler">
+        <span>Cooler</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="pcbuilder.js"></script>
+
+</body>
+</html>

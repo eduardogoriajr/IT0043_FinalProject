@@ -24,30 +24,40 @@
 
   <h1>Exercise</h1>
 
- <main>
-  <section class="module-container">
-  <div class="module">
-    <h3>Quiz Assessment 1: Module 1 & 2</h3>
-    <a href="quiz1.html" class="module-btn" target="_blank">Take Quiz</a>
-  </div>
-  <div class="module">
-    <h3>Quiz Assessment 2: Module 3 & 4</h3>
-    <a href="quiz2.html" class="module-btn" target="_blank">Take Quiz</a>
-  </div>
-  <div class="module">
-    <h3>Computer Labeling Quiz</h3>
-    <a href="quiz3.html" class="module-btn" target="_blank">Take Quiz</a>
-  </div>
+
+  <main>
+    <section class="module-container">
+      <div class="module">
+        <h3>Quiz Assessment 1: Module 1 & 2</h3>
+        <a href="quiz1.html" class="module-btn">Take Quiz</a>
+      </div>
+      <div class="module">
+        <h3>Quiz Assessment 2: Module 3 & 4</h3>
+        <a href="quiz2.html" class="module-btn">Take Quiz</a>
+      </div>
+      <div class="module">
+        <h3>Computer Labeling Quiz</h3>
+        <a href="quiz3.html" class="module-btn premium-quiz">Take Quiz</a>
+      </div>
   <div class="module">
     <h3>Computer Building</h3>
-    <a href="quiz4.html" class="module-btn" target="_blank">Simulate</a>
+    <a href="quiz4.html" class="module-btn premium-quiz">Simulate</a>
   </div>
-  </section>
-</main>
-    <footer>
+    </section>
+
+    <!-- Premium Popup -->
+    <div id="premium-popup" class="popup-overlay hidden">
+      <div class="popup-box">
+        <p>Access to this feature requires a Premium account.</p>
+        <button id="premium-ok-btn">OK</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
     <p>&copy; 2025 Learn2BuildIT. All rights reserved.</p>
   </footer>
 
-
+  <script src="scripts.js"></script>
 </body>
 </html>

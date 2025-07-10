@@ -52,9 +52,6 @@ main {
     flex: 1;
     padding: 20px 20px;
     background-color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 .intro {
@@ -145,14 +142,6 @@ button:hover {
     margin-top: 0;
 }
 
-.feature-item a {
-  text-decoration: none;
-  color: #008fc9;
-}
-
-.feature-item a:hover {
-  text-decoration: underline;
-}
 .how-it-works ol {
     max-width: 600px;
     margin: 0 auto;
@@ -193,7 +182,6 @@ footer {
     flex-direction: row;
     align-items: flex-end;
     text-align: center;
-    gap: 40px;
 }
 
 .feature-image {
@@ -217,16 +205,11 @@ footer {
 }
 
 .module{
-  background-color: #f9f9f9;
+  background-color: #eaf6ff;
   border-radius: 5px;
   margin-bottom: 20px;
   padding: 20px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.module:hover{
-  transform: translateY(-5px);
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .module h3{
@@ -238,8 +221,8 @@ footer {
   display: inline-block;
   margin-top: 15px;
   padding: 10px 18px;
-  background-color: #008fc9;
-  color: #fff;
+  background-color: #007bff;
+  color: #e6ffe6;
   text-decoration: none;
   border-radius: 5px;
   font-size: 14px;
@@ -249,21 +232,22 @@ footer {
   background-color: #0056b3;
 }
 
-.quiz-container{
-  max-width: 80%;
-  margin: 30px auto;
-  padding: 20px;
-  background-color: #fff;
-}
-
 .quizflex {
   display: flex;
-  flex-wrap: wrap;      
-  justify-content: center; 
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 20px;
-  max-width: 700px;      
-  margin: 20px auto;     
-  padding: 0 10px;
+  width: 500px;
+}
+
+.quizflex .feature-item {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 350px;
+  text-align: center;
 }
 
 .AboutUs {
@@ -283,6 +267,7 @@ footer {
   justify-content: space-around;
   align-items: center;
   background-color: #eaf6ff;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
   margin: 30px 0;
   border-radius: 12px;
   gap: 30px;
@@ -693,12 +678,6 @@ footer {
     vertical-align: middle; 
 }
 
-.option-item input[type="radio"]:checked + label {
-    background-color: #008fc9;
-    color: white;
-    border-color: #008fc9;
-}
-
 .option-item label[for$="_answer"] { 
     flex-shrink: 0; 
     padding: 0; 
@@ -1065,4 +1044,11 @@ footer {
     .quiz-results p {
         font-size: 1.1em;
     }
+
 }
+    .quiz-form {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }

@@ -20,6 +20,9 @@ document.querySelectorAll('nav ul li a').forEach(link => {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
+    /*
+        REGISTER-LOGIN PAGE
+    */
     const loginForm = document.querySelector('.login-form');
     if (loginForm) {
         loginForm.addEventListener('submit', function(e) {
@@ -53,6 +56,48 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    /*
+        MODULES PAGE AND EXERCISE PAGE
+    */
+    const moduleBtns = document.querySelectorAll('.premium-module');
+    const popup = document.getElementById('premium-popup');
+    const okBtn = document.getElementById('premium-ok-btn');
+
+    moduleBtns.forEach(button => 
+        button.onclick = (event) => {
+            console.log('Button clicked:', button.textContent);
+            // Check if 'isPremium' is in localStorage
+            if (!localStorage.getItem('isPremium')) {
+            event.preventDefault(); // Stop navigating to new page
+            popup.classList.remove('hidden'); // Show pop up modal
+            
+            // Add click handler to button
+            okBtn.addEventListener('click', () => {
+                window.location.href = '/profile.html'; // Replace with your target URL
+            });
+        };
+    });
+
+   const quizBtns = document.querySelectorAll('.premium-quiz');
+
+    quizBtns.forEach(button => 
+        button.onclick = (event) => {
+            console.log('Button clicked:', button.textContent);
+            // Check if 'isPremium' is in localStorage
+            if (!localStorage.getItem('isPremium')) {
+            event.preventDefault(); // Stop navigating to new page
+            popup.classList.remove('hidden'); // Show pop up modal
+
+            // Add click handler to button
+            okBtn.addEventListener('click', () => {
+                window.location.href = '/profile.html'; // Replace with your target URL
+            });
+        };
+    });
+
+    /*
+        PROFILE PAGE
+    */
     const profileUsername = document.getElementById('profile-username');
     const statusDiv = document.getElementById('user-status');
     const premiumBtn = document.getElementById('become-premium-btn');
@@ -151,6 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 });
 
+                localStorage.setItem('quiz1Score', score);
                 displayResults(score, totalQuestions, results, 'quizResults1');
             }
         });
@@ -196,6 +242,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 });
 
+                localStorage.setItem('quiz2Score', score);
                 displayResults(score, totalQuestions, results, 'quizResults2');
             }
         });
@@ -247,6 +294,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         results3.push(`<li class="no-answer">Question ${questionNumber}: No answer provided.</li>`);
                     }
                 });
+
+                localStorage.setItem('quiz3Score', score3);
                 displayResults(score3, totalQuestions3, results3, 'quizResults3');
             }
         });
@@ -290,115 +339,24 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-function getStarted() {
-    alert("Redirecting to Modules page...");
-    window.location.href = "Modules.html"; 
-}
 
-function learnMore() {
-    alert("Learn more about us");
-    window.location.href = "About.html"; 
-}
+    const quiz1Txt = document.getElementById('quiz1-txt');
+    const quiz2Txt = document.getElementById('quiz2-txt');
+    const quiz3Txt = document.getElementById('quiz3-txt');
 
-function contacts() {
-    alert("Loading contact informations.");
-    window.location.href = "Contact.html"; 
-}
+    let quiz1Score = localStorage.getItem('quiz1Score');
+    let quiz2Score = localStorage.getItem('quiz2Score');
+    let quiz3Score = localStorage.getItem('quiz3Score');
 
-document.querySelectorAll('nav ul li a').forEach(link => {
-    link.addEventListener('click', () => {
-        console.log(`Navigating to ${link.textContent}`);
-    });
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    const loginForm = document.querySelector('.login-form');
-    if (loginForm) {
-        loginForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const username = loginForm.querySelector('input[type="text"]').value.trim();
-            const password = loginForm.querySelector('input[type="password"]').value.trim();
-            if (!username || !password) {
-                alert('Please enter both username and password.');
-            } else {
-                localStorage.setItem('username', username);
-                alert(`Welcome back, ${username}!`);
-                window.location.href = "Home.html";
-            }
-        });
+    if(quiz1Score) {
+        quiz1Txt.innerText = quiz1Score + '/10';
     }
 
-    const registerForm = document.querySelector('.register-form');
-    if (registerForm) {
-        registerForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const username = registerForm.querySelector('input[type="text"]').value.trim();
-            const email = registerForm.querySelector('input[type="email"]').value.trim();
-            const password = registerForm.querySelector('input[type="password"]').value.trim();
-            if (!username || !email || !password) {
-                alert('Please fill in all registration fields.');
-            } else if (!email.includes('@') || !email.includes('.')) {
-                alert('Please enter a valid email address.');
-            } else {
-                alert(`Registration successful! Welcome, ${username}!`);
-            }
-        });
+    if(quiz2Score) {
+        quiz2Txt.innerText = quiz2Score + '/10';
     }
 
-    const profileUsername = document.getElementById('profile-username');
-    const statusDiv = document.getElementById('user-status');
-    const premiumBtn = document.getElementById('become-premium-btn');
-    const logoutBtn = document.getElementById('logout-btn');
-    const paymentModal = document.getElementById('payment-modal');
-    const paymentForm = document.getElementById('payment-form');
-    const cancelPayment = document.getElementById('cancel-payment');
-
-    if (profileUsername && statusDiv && premiumBtn && logoutBtn) {
-        profileUsername.textContent = localStorage.getItem('username') || 'Username';
-        let isPremium = localStorage.getItem('isPremium') === 'true';
-
-        function updateStatus() {
-            if (isPremium) {
-                statusDiv.textContent = 'Premium User';
-                statusDiv.className = 'user-status premium';
-                premiumBtn.style.display = 'none';
-            } else {
-                statusDiv.textContent = 'Free User';
-                statusDiv.className = 'user-status free';
-                premiumBtn.style.display = 'inline-block';
-            }
-        }
-
-        premiumBtn.addEventListener('click', function() {
-            paymentModal.style.display = 'flex';
-        });
-
-        logoutBtn.addEventListener('click', function() {
-            if (confirm('Are you sure you want to logout?')) {
-                localStorage.removeItem('username');
-                localStorage.removeItem('isPremium');
-                window.location.href = 'LandingPage.html';
-            }
-        });
-
-        updateStatus();
+    if(quiz3Score) {
+        quiz3Txt.innerText = quiz3Score + '/8';
     }
-
-    if (premiumBtn && paymentModal && paymentForm && cancelPayment) {
-        cancelPayment.addEventListener('click', function() {
-            paymentModal.style.display = 'none';
-        });
-
-        paymentForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            paymentModal.style.display = 'none';
-            if (confirm('Are you sure you want to become a Premium User?')) {
-                localStorage.setItem('isPremium', 'true');
-                alert('Payment successful! You are now a Premium User.');
-                window.location.reload();
-            }
-        });
-    }
-});
-
 });

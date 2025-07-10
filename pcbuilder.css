@@ -1,0 +1,106 @@
+body {
+  font-family: 'Verdana', sans-serif;
+  background-color: #eaf6ff;
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  color: #0077b6;
+}
+
+.pc-area {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.motherboard-container {
+  position: relative;
+  width: 400px;
+  height: 500px;
+}
+
+.motherboard-img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 0 10px #aaa;
+}
+
+.slot {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border: 2px dashed #008fc9;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.slot2 {
+  position: absolute;
+  width: 130px;
+  height: 20px;
+  border: 2px dashed #008fc9;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.slot3 {
+  position: absolute;
+  width: 40px;
+  height: 100px;
+  border: 2px dashed #008fc9;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+#cpu-slot { top: 100px; left: 180px; }
+#gpu-slot { top: 295px; left: 110px; }
+#ram-slot { top: 80px; left: 270px; }
+#cooler-slot { top: 80px; left: 180px; }
+
+.parts-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.part {
+  width: 80px;
+  cursor: grab;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.part img {
+  width: 100%;
+}
+
+.part span {
+  display: block;
+  margin-top: 5px;
+  font-weight: bold;
+  font-size: 0.9em;
+  color: #333;
+}
+
+.part:active {
+  transform: scale(1.1);
+}
+
+.back-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #0077b6;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.back-button:hover {
+  background-color: #023e8a;
+}
